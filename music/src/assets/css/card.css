@@ -1,0 +1,234 @@
+.card {
+  /* display: flex; */
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.top {
+  font-size: 40px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+
+  text-align: center;
+}
+.text {
+  background: linear-gradient(45deg, #9b22ea, #ea22b1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.content {
+  width: 100%;
+  height: 1005;
+  display: flex;
+  height: calc(100% - 100px);
+  overflow-y: auto;
+}
+
+.content .left {
+  width: 35%;
+  height: 600px;
+  margin: 0 2%;
+  margin-bottom: 2%;
+  padding: 30px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(7, 15, 15, 0.5);
+  
+  backdrop-filter: blur(3px);
+}
+
+.content .left .nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5%;
+  height: 5%;
+  align-items: center;
+}
+
+.content .left .img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5%;
+}
+
+.content .left .img img {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  animation: rotation 20s linear;
+  transform-origin: 50% 50%;
+  animation-iteration-count: infinite;
+  animation-play-state: paused;
+}
+
+.content .left .img img.playing{
+ 
+  animation-play-state: running;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  } 
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.content .left .details {
+  width: 100%;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 3%;
+}
+.content .left .details .title {
+  margin-bottom: 10px;
+}
+
+.content .left .progress {
+  width: 100%;
+}
+.content .left .progress input {
+  width: 100%;
+}
+
+.content .left .timer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5%;
+}
+.content .left .controls {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.content .left .controls .volume i,
+.content .left .controls .repeat,
+.content .left .controls #prev,
+.content .left .controls #next {
+  font-size: 40px;
+}
+
+.content .left .controls .play {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(#8dadff, #6e72a3 100%);
+  border-radius: 50%;
+  border: 5px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.content .left .controls .play i {
+  font-size: 50px;
+}
+.content .left .controls .volume {
+  position: relative;
+  
+}
+
+.content .left .controls .volume .loa {
+  background-color: rgba(255, 255, 255, 0.615);
+  backdrop-filter: blur(0.25em);
+  position: absolute;
+  bottom: 130px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  padding: 5px 8px;
+  transform: rotate(-90deg);
+  transition: all 0.3s linear;
+  right: -82px;
+  opacity: 0;
+  display: none;
+}
+.content .left .controls .volume .loa input {
+  width: 180px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+.content .left .controls .volume .loa.show {
+  display: flex;
+  opacity: 1;
+}
+
+.content .right {
+  flex: 1;
+  height: 600px;
+  margin: 0 2%;
+  padding: 30px;
+  border-radius: 20px;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(7, 15, 15, 0.5);
+  overflow-y: auto;
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  scrollbar-width: thin; 
+  scrollbar-color: rgba(154, 34, 234, 0.619) rgba(234, 34, 177, 0.1); 
+}
+
+.content .right table {
+  width: 100%;
+}
+
+.content .right .row {
+  display: block;
+  margin-bottom: 20px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 15px;
+
+  transition: all 0.3s;
+}
+
+.content .right .row-h {
+  display: block;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.content .right .row:hover {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(1em);
+}
+.content .right .col {
+  display: inline-flex;
+  justify-content: center;
+}
+
+.content .right .col-1 {
+  width: 5%;
+}
+
+.content .right .col-2 {
+  width: 60%;
+  justify-content: left;
+  padding-left: 40px;
+}
+
+.content .right .col-3 {
+  width: 35%;
+}
